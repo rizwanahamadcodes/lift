@@ -74,8 +74,9 @@
                             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                 <ul class="nav navbar-nav navbar-right">
 
-                                    <li class="s_hide"><a href="#" style="    text-align: left;
-"> PAN No. -     <?php echo get_field('pan', 7); ?> <br> Comapny Regd. No. - <?php echo get_field('registration', 7); ?>
+                                    <li class="s_hide"><a href="#" style="    text-align: left;"> PAN No. -
+                                            <?php echo get_field('pan', 7); ?> <br> Comapny Regd. No. -
+                                            <?php echo get_field('registration', 7); ?>
                                         </a>
                                     </li> <br>
 

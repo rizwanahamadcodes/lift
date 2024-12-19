@@ -226,12 +226,12 @@
 
               <?php
               // Check if ACF repeater field 'office_address' has rows
-              if (have_rows('office_address', 1795)):
+              if (have_rows('contacts', 35)):
                 the_row(); // Move to the first row
-                $address = get_sub_field('address'); // Address
+                $address = get_sub_field('address_1'); // Address
                 $phone = get_sub_field('phone');   // Phone
-                $mobile = get_sub_field('mobile');  // Mobile
-                $emails = get_sub_field('emails');  // Emails
+                $emails1 = get_sub_field('emails');  // Mobile
+                $emails2 = get_sub_field('emails_1');  // Emails
                 ?>
 
                 <ul class="footer-contact-list">
@@ -241,23 +241,34 @@
                     </li>
                   <?php endif; ?>
 
-                  <?php if ($phone || $mobile): ?>
+                  <?php if ($phone): ?>
                     <li>
 
                       <i class="fa fa-phone"></i>
                       <div><?php echo esc_html($phone); ?>
-                        <?php echo $mobile ? ', ' . esc_html($mobile) : ''; ?>
                       </div>
                     </li>
                   <?php endif; ?>
 
-                  <?php if ($emails): ?>
+                  <?php if ($emails1): ?>
                     <li>
-                      <a href="mailto:<?php echo esc_attr($emails); ?>">
-                        <i class="fa fa-envelope"></i> <?php echo esc_html($emails); ?>
+                      <a href="mailto:<?php echo esc_attr($emails1); ?>">
+                        <i class="fa fa-envelope"></i> <?php echo esc_html($emails1); ?>
                       </a>
+
                     </li>
                   <?php endif; ?>
+
+                  <?php if ($emails2): ?>
+                    <li>
+
+                      <a href="mailto:<?php echo esc_attr($emails2); ?>">
+                        <i class="fa fa-envelope"></i> <?php echo esc_html($emails2); ?>
+                      </a>
+
+                    </li>
+                  <?php endif; ?>
+
                 </ul>
 
               <?php else: ?>
@@ -276,24 +287,33 @@
                     $the_query->the_post();
                     ?>
 
+                    <?php
+                    $insta = get_field('instagram');
+                    $fb = get_field('facebook');
+                    $u = get_field('youtube');
 
-                    <li>
-                      <a href="<?php the_field('instagram'); ?>" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="<?php the_field('facebook'); ?>" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                      </a>
-                    </li>
-
-                    <li>
-                      <a href="<?php the_field('youtube'); ?>" target="_blank">
-                        <i class="fab fa-youtube"></i>
-                      </a>
-                    </li>
+                    ?>
+                    <?php if ($insta): ?>
+                      <li>
+                        <a href="<?php the_field('instagram'); ?>" target="_blank">
+                          <i class="fab fa-instagram"></i>
+                        </a>
+                      </li>
+                    <?php endif; ?>
+                    <?php if ($fb): ?>
+                      <li>
+                        <a href="<?php the_field('facebook'); ?>" target="_blank">
+                          <i class="fab fa-facebook-f"></i>
+                        </a>
+                      </li>
+                    <?php endif; ?>
+                    <?php if ($u): ?>
+                      <li>
+                        <a href="<?php the_field('youtube'); ?>" target="_blank">
+                          <i class="fab fa-youtube"></i>
+                        </a>
+                      </li>
+                    <?php endif; ?>
 
                   <?php endwhile;
                   wp_reset_postdata();

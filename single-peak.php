@@ -505,7 +505,7 @@
                     <div class="container">
                         <div class="row tripflex">
                             <div class="col-sm-12" align="center">
-                                <h1 style="font-size: 25px;">Similar Trips</h1>
+                                <h1 style="font-size: 25px;">Similar Peak Climbing</h1>
                             </div>
                             <div class="col-sm-12">
 

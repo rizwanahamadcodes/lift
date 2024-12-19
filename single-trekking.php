@@ -506,7 +506,7 @@
                     <div class="col-sm-12">
 
                         <div class="swiper-container mySwiper swiper-container-horizontal">
-                            <div class="swiper-wrapper" style="transform: translate3d(-740px, 0px, 0px); transition-duration: 0ms;">
+                            <div class="swiper-wrapper" style="">
                                 <?php
                                 global $wp_query;
                                 $post_id = $wp_query->post->ID;
@@ -567,9 +567,13 @@
 <?php endwhile;
 endif; ?>
 <script>
-    var swiper = new Swiper(".mySwiper", {
+    document.addEventListener(
+        "DOMContentLoaded", () => {
+            
+     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 3,
         spaceBetween: 30,
+        loop: true,
         paginationClickable: true,
         lazyLoading: true,
         nextButton: ".swiper-button-next",
@@ -595,7 +599,8 @@ endif; ?>
                 spaceBetween: 40,
             },
         },
-    });
+    });}
+    )
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.2.1/js/swiper.min.js" integrity="sha512-y3xBRnPcYKl5rPeXr8jFALTW+vpeqXVqhNACy573tW3YBqocRygpJ042ukRPKxA2pbWp3YrvfWmWUXcEOgDIrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>

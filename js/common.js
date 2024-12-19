@@ -164,3 +164,84 @@ jQuery(document)
         });
     })
     .scroll();
+
+document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.querySelector("#topNav");
+    const triggerElement = document.querySelector("#navScrollTrigger");
+    if (!nav || !triggerElement) return;
+    // Set up the Intersection Observer
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    nav.classList.remove("scrolled");
+                } else {
+                    nav.classList.add("scrolled");
+                }
+            });
+        },
+        {
+            rootMargin: "0px",
+            threshold: 0,
+        }
+    );
+
+    observer.observe(triggerElement);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Select elements
+    const hamburgerBtn = document.querySelector(".hamburger-btn");
+    const closeNavButton = document.querySelector("#closeNavButton");
+    const modal = document.querySelector(".mobile-nav-modal");
+    const navModalWrapper = document.querySelector(".nav-modal-wrapper");
+
+    // Function to toggle modal visibility
+    function toggleModal() {
+        modal.classList.toggle("modal-open");
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        modal.classList.remove("modal-open");
+    }
+
+    // Add event listener for hamburger button
+    hamburgerBtn.addEventListener("click", toggleModal);
+
+    // Add event listener for close button
+    closeNavButton.addEventListener("click", closeModal);
+
+    // Add event listener for clicking outside modal (only on the wrapper, not its children)
+    navModalWrapper.addEventListener("click", (event) => {
+        if (event.target === navModalWrapper) {
+            closeModal();
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const listItemsWithDropdown = document.querySelectorAll(".has-dropdown");
+    if (listItemsWithDropdown.length === 0) return;
+    listItemsWithDropdown.forEach((listItemWithDropdown) => {
+        const toggleLink = listItemWithDropdown.querySelector(
+            "[data-custom-toggle='dropdown']"
+        );
+        if (!toggleLink) return;
+        toggleLink.addEventListener("click", (e) => {
+            e.preventDefault();
+            listItemsWithDropdown.forEach((listItem) => {
+                if (e.target.parentElement === listItem) {
+                    listItem.classList.toggle("droppeddown");
+                } else {
+                    listItem.classList.remove("droppeddown");
+                }
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            if (e.target != toggleLink) {
+                listItemWithDropdown.classList.remove("droppeddown");
+            }
+        });
+    });
+});
