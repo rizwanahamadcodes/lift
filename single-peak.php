@@ -10,7 +10,7 @@
     background-attachment: fixed;">
                     <section id="chooseWrap">
                     <?php require_once 'float-menu.php'; ?>
-
+                                            
                     </section>
                     <section id="overlay">
                         <div class="overlayInner">
