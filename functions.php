@@ -1,5 +1,6 @@
 <?php
-function theme_style() {
+function theme_style()
+{
     // Enqueue stylesheets with version based on file modification time
     wp_enqueue_style('sidebar', get_stylesheet_directory_uri() . '/css/sidebar.css', array(), filemtime(get_stylesheet_directory() . '/css/sidebar.css'), 'all');
     wp_enqueue_style('styleCommon', get_stylesheet_directory_uri() . '/css/styleCommon.css', array(), filemtime(get_stylesheet_directory() . '/css/styleCommon.css'), 'all');
@@ -127,7 +128,7 @@ function testimonials_post_type()
         'new_item' => 'New Testimonial',
         'view_item' => 'View Testimonial',
         'search_items' => 'Search Testimonials',
-        'not_found' =>  'No Testimonials found',
+        'not_found' => 'No Testimonials found',
         'not_found_in_trash' => 'No Testimonials in the trash',
         'parent_item_colon' => '',
     );
@@ -212,18 +213,18 @@ function testimonials_columns($column, $post_id)
         case 'testimonial':
             the_excerpt();
             break;
-            // case 'testimonial-client-name':
-            //     if ( ! empty( $testimonial_data['client_name'] ) )
-            //         echo $testimonial_data['client_name'];
-            //     break;
+        // case 'testimonial-client-name':
+        //     if ( ! empty( $testimonial_data['client_name'] ) )
+        //         echo $testimonial_data['client_name'];
+        //     break;
         case 'testimonial-source':
             if (!empty($testimonial_data['source']))
                 echo $testimonial_data['source'];
             break;
-            // case 'testimonial-link':
-            //     if ( ! empty( $testimonial_data['link'] ) )
-            //         echo $testimonial_data['link'];
-            //     break;
+        // case 'testimonial-link':
+        //     if ( ! empty( $testimonial_data['link'] ) )
+        //         echo $testimonial_data['link'];
+        //     break;
     }
 }
 
@@ -251,7 +252,8 @@ function get_testimonial($posts_per_page = 1, $orderby = 'none', $testimonial_id
 
     $testimonials = '';
     if ($query->have_posts()) {
-        while ($query->have_posts()) : $query->the_post();
+        while ($query->have_posts()):
+            $query->the_post();
             $post_id = get_the_ID();
             $testimonial_data = get_post_meta($post_id, '_testimonial', true);
             $client_name = (empty($testimonial_data['client_name'])) ? '' : $testimonial_data['client_name'];
@@ -278,7 +280,8 @@ function get_testimonial($posts_per_page = 1, $orderby = 'none', $testimonial_id
 function custom_team_department_field($form_fields, $attachmentPost)
 {
     $parent_post = $attachmentPost->post_parent;
-    if ($parent_post != 4372) return $form_fields;
+    if ($parent_post != 4372)
+        return $form_fields;
 
     $field_value = get_post_meta($attachmentPost->ID, 'team_department', true);
     $form_fields['team_department'] = array(
@@ -306,7 +309,8 @@ add_filter('attachment_fields_to_edit', 'custom_team_department_field', 10, 2);
 function save_team_department($attachment_id)
 {
     $parent_post = wp_get_post_parent_id($attachment_id);
-    if ($parent_post != 4372) return;
+    if ($parent_post != 4372)
+        return;
 
     if (isset($_REQUEST['attachments'][$attachment_id]['team_department'])) {
         $team_department = sanitize_text_field($_REQUEST['attachments'][$attachment_id]['team_department']);
@@ -316,76 +320,78 @@ function save_team_department($attachment_id)
 add_action('edit_attachment', 'save_team_department');
 
 
-function create_team_post_type() {
+function create_team_post_type()
+{
     $labels = array(
-        'name'               => 'Teams',
-        'singular_name'      => 'Team',
-        'menu_name'          => 'Teams',
-        'name_admin_bar'     => 'Team',
-        'add_new'            => 'Add New',
-        'add_new_item'       => 'Add New Team',
-        'new_item'           => 'New Team',
-        'edit_item'          => 'Edit Team',
-        'view_item'          => 'View Team',
-        'all_items'          => 'All Teams',
-        'search_items'       => 'Search Teams',
-        'parent_item_colon'  => 'Parent Teams:',
-        'not_found'          => 'No teams found.',
+        'name' => 'Teams',
+        'singular_name' => 'Team',
+        'menu_name' => 'Teams',
+        'name_admin_bar' => 'Team',
+        'add_new' => 'Add New',
+        'add_new_item' => 'Add New Team',
+        'new_item' => 'New Team',
+        'edit_item' => 'Edit Team',
+        'view_item' => 'View Team',
+        'all_items' => 'All Teams',
+        'search_items' => 'Search Teams',
+        'parent_item_colon' => 'Parent Teams:',
+        'not_found' => 'No teams found.',
         'not_found_in_trash' => 'No teams found in Trash.',
-        'featured_image'     => 'Team Image',
+        'featured_image' => 'Team Image',
         'set_featured_image' => 'Set team image',
         'remove_featured_image' => 'Remove team image',
         'use_featured_image' => 'Use as team image',
-        'archives'           => 'Team Archives',
-        'insert_into_item'   => 'Insert into team',
+        'archives' => 'Team Archives',
+        'insert_into_item' => 'Insert into team',
         'uploaded_to_this_item' => 'Uploaded to this team',
-        'items_list'         => 'Teams list',
+        'items_list' => 'Teams list',
         'items_list_navigation' => 'Teams list navigation',
-        'filter_items_list'  => 'Filter teams list',
+        'filter_items_list' => 'Filter teams list',
     );
 
     $args = array(
-        'labels'             => $labels,
-        'public'             => true,
-        'publicly_queryable'=> true,
-        'show_ui'            => true,
-        'show_in_menu'       => true,
-        'query_var'          => true,
-        'rewrite'            => array('slug' => 'team'),
-        'capability_type'    => 'post',
-        'has_archive'        => true,
-        'hierarchical'       => false,
-        'menu_position'      => 5,
-        'supports'           => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
-        'show_in_rest'       => true, // Enable block editor (Gutenberg) for custom post type
+        'labels' => $labels,
+        'public' => true,
+        'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'query_var' => true,
+        'rewrite' => array('slug' => 'team'),
+        'capability_type' => 'post',
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => 5,
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'custom-fields'),
+        'show_in_rest' => true, // Enable block editor (Gutenberg) for custom post type
     );
 
     register_post_type('team', $args);
 }
 add_action('init', 'create_team_post_type');
-function create_team_categories_taxonomy() {
+function create_team_categories_taxonomy()
+{
     $labels = array(
-        'name'              => 'Team Categories',
-        'singular_name'     => 'Team Category',
-        'search_items'      => 'Search Team Categories',
-        'all_items'         => 'All Team Categories',
-        'parent_item'       => 'Parent Team Category',
+        'name' => 'Team Categories',
+        'singular_name' => 'Team Category',
+        'search_items' => 'Search Team Categories',
+        'all_items' => 'All Team Categories',
+        'parent_item' => 'Parent Team Category',
         'parent_item_colon' => 'Parent Team Category:',
-        'edit_item'         => 'Edit Team Category',
-        'update_item'       => 'Update Team Category',
-        'add_new_item'      => 'Add New Team Category',
-        'new_item_name'     => 'New Team Category Name',
-        'menu_name'         => 'Team Categories',
+        'edit_item' => 'Edit Team Category',
+        'update_item' => 'Update Team Category',
+        'add_new_item' => 'Add New Team Category',
+        'new_item_name' => 'New Team Category Name',
+        'menu_name' => 'Team Categories',
     );
 
     $args = array(
-        'hierarchical'      => true, // Set to true for a category-like taxonomy (like default WordPress categories)
-        'labels'            => $labels,
-        'show_ui'           => true,
+        'hierarchical' => true, // Set to true for a category-like taxonomy (like default WordPress categories)
+        'labels' => $labels,
+        'show_ui' => true,
         'show_admin_column' => true,
-        'query_var'         => true,
-        'rewrite'           => array('slug' => 'team-category'),
-        'show_in_rest'      => true, // Enable for Gutenberg editor
+        'query_var' => true,
+        'rewrite' => array('slug' => 'team-category'),
+        'show_in_rest' => true, // Enable for Gutenberg editor
     );
 
     register_taxonomy('team_category', 'team', $args);

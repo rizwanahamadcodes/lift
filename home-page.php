@@ -6,7 +6,7 @@ Template Name: Home Page
 <?php get_header(); ?>
 <section id="slider_Wrap">
     <section id="chooseWrap" class="affix">
-       <?php require_once 'float-menu.php';?>
+        <?php require_once 'float-menu.php'; ?>
     </section>
     <div id="carousel" class="carousel slide carousel-fade" data-interval="4000" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -15,11 +15,14 @@ Template Name: Home Page
             $y = 0;
             $aclass = '';
             $the_query = new WP_Query(array('post_type' => 'slider')); ?>
-            <?php while ($the_query->have_posts()) : $the_query->the_post();
+            <?php while ($the_query->have_posts()):
+                $the_query->the_post();
                 $x++;
-            ?>
-                <?php if ($x == 1) $aclass .= ' active';
-                else $aclass = '';
+                ?>
+                <?php if ($x == 1)
+                    $aclass .= ' active';
+                else
+                    $aclass = '';
                 ?>
                 <li data-target="#carousel" data-slide-to="<?php echo $y++; ?>" class="<?php echo $aclass; ?>"></li>
             <?php endwhile; ?>
@@ -31,11 +34,14 @@ Template Name: Home Page
             $c = 0;
             $class = '';
             $the_query = new WP_Query(array('post_type' => 'slider')); ?>
-            <?php while ($the_query->have_posts()) : $the_query->the_post();
+            <?php while ($the_query->have_posts()):
+                $the_query->the_post();
                 $c++;
-            ?>
-                <?php if ($c == 1) $class .= ' active';
-                else $class = '';
+                ?>
+                <?php if ($c == 1)
+                    $class .= ' active';
+                else
+                    $class = '';
                 ?>
                 <div class="item <?php echo $class; ?>">
                     <?php $url = wp_get_attachment_url(get_post_thumbnail_id($post->ID)); ?>
@@ -55,110 +61,115 @@ Template Name: Home Page
         <a class="carousel-control right" href="#carousel" data-slide="next"><span class="controllright"></span></a>
     </div>
 </section>
-<?php if (have_posts()) :
-    while (have_posts()) : the_post(); ?>
+<?php if (have_posts()):
+    while (have_posts()):
+        the_post(); ?>
         <section id="h_aboutWrap">
             <div id="h_about">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-md-4 col-sm-5 h_abt_left" align="right" data-aos="fade-up" data-aos-once='true'>
                             <?php
-// Page ID you want to get the image for
-$page_id = 7;
+                            // Page ID you want to get the image for
+                            $page_id = 7;
 
-// Get the image field (array) using the page ID
-$image = get_field('home_picture', $page_id);
+                            // Get the image field (array) using the page ID
+                            $image = get_field('home_picture', $page_id);
 
-if ($image) {
-    // Get the image URL (full size)
-    $image_url = $image['url'];
+                            if ($image) {
+                                // Get the image URL (full size)
+                                $image_url = $image['url'];
 
-    // Get the alt text of the image
-    $image_alt = $image['alt'];
+                                // Get the alt text of the image
+                                $image_alt = $image['alt'];
 
-    // Get different sizes (e.g., thumbnail, medium, large)
-    $image_thumb = $image['sizes']['thumbnail'];
-    $image_medium = $image['sizes']['medium'];
-    $image_large = $image['sizes']['large'];
+                                // Get different sizes (e.g., thumbnail, medium, large)
+                                $image_thumb = $image['sizes']['thumbnail'];
+                                $image_medium = $image['sizes']['medium'];
+                                $image_large = $image['sizes']['large'];
 
-    // Output the image in HTML
-    echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image_alt) . '" class="img-responsive">';
-}
-?>
+                                // Output the image in HTML
+                                echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($image_alt) . '" class="img-responsive">';
+                            }
+                            ?>
 
 
                         </div>
                         <div class="col-md-8 col-sm-7 h_abt_right">
-                        <div style="text-align: justify;">
-                            <!--<div class="heading">-->
-                            <!--    <h1><?php the_field('heading'); ?></h1>-->
-                            <!--    <h3><?php the_field('sub_heading'); ?></h3>-->
-                            <!--</div>-->
-                            <?php the_content(); ?>
-</div>
+                            <div style="text-align: justify;">
+                                <!--<div class="heading">-->
+                                <!--    <h1><?php the_field('heading'); ?></h1>-->
+                                <!--    <h3><?php the_field('sub_heading'); ?></h3>-->
+                                <!--</div>-->
+                                <?php the_content(); ?>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-<?php endwhile;
+    <?php endwhile;
 endif; ?>
 <section id="offerWrap" class="divider_bg">
     <div class="container">
         <div class="row offer-flex">
-            <?php if (have_posts()) :
-                while (have_posts()) : the_post(); ?>
+            <?php if (have_posts()):
+                while (have_posts()):
+                    the_post(); ?>
                     <div class="col-md-7 col-sm-12 offer-child">
-                    <div style="text-align: justify;">
-                        <?php the_field('content'); ?>
-            </div>
+                        <div style="text-align: justify;">
+                            <?php the_field('content'); ?>
+                        </div>
                     </div>
-            <?php endwhile;
+                <?php endwhile;
             endif; ?>
             <div class="col-md-5 col-sm-12">
                 <?php the_post_thumbnail('full', array("class" => "img-responsive")); ?>
                 <div class="row">
                     <!--<?php $the_query = new WP_Query('page_id=3384'); ?>-->
-                    <!--<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>-->
-                    <!--    <div class="col-md-6 col-sm-6">-->
-                    <!--        <div class="offer_cov">-->
-                    <!--            <a href="<?php the_permalink(); ?>">-->
-                    <!--                <?php the_post_thumbnail('full', array("class" => "img-responsive")); ?>-->
-                    <!--            </a>-->
-                    <!--            <div class="offer">-->
-                    <!--                <a href="<?php the_permalink(); ?>">-->
-                    <!--                    <h3>-->
-                    <!--                        <?php the_title(); ?>-->
-                    <!--                    </h3>-->
-                    <!--                </a>-->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--<?php endwhile; ?>-->
+                    <!--<?php while ($the_query->have_posts()):
+                        $the_query->the_post(); ?>-->
+                        <!--    <div class="col-md-6 col-sm-6">-->
+                        <!--        <div class="offer_cov">-->
+                        <!--            <a href="<?php the_permalink(); ?>">-->
+                        <!--                <?php the_post_thumbnail('full', array("class" => "img-responsive")); ?>-->
+                        <!--            </a>-->
+                        <!--            <div class="offer">-->
+                        <!--                <a href="<?php the_permalink(); ?>">-->
+                        <!--                    <h3>-->
+                        <!--                        <?php the_title(); ?>-->
+                        <!--                    </h3>-->
+                        <!--                </a>-->
+                        <!--            </div>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--<?php endwhile; ?>-->
                     <!--<?php $the_query = new WP_Query('page_id=2022'); ?>-->
-                    <!--<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>-->
-                    <!--    <div class="col-md-6 col-sm-6">-->
-                    <!--        <div class="offer_cov">-->
-                    <!--            <a href="<?php the_permalink(); ?>">-->
-                    <!--                <?php the_post_thumbnail('full', array("class" => "img-responsive")); ?>-->
-                    <!--            </a>-->
-                    <!--            <div class="offer">-->
-                    <!--                <a href="<?php the_permalink(); ?>">-->
-                    <!--                    <h3>-->
-                    <!--                        <?php the_title(); ?>-->
-                    <!--                    </h3>-->
-                    <!--                </a>-->
-                    <!--            </div>-->
-                    <!--        </div>-->
-                    <!--    </div>-->
-                    <!--<?php endwhile; ?>-->
+                    <!--<?php while ($the_query->have_posts()):
+                        $the_query->the_post(); ?>-->
+                        <!--    <div class="col-md-6 col-sm-6">-->
+                        <!--        <div class="offer_cov">-->
+                        <!--            <a href="<?php the_permalink(); ?>">-->
+                        <!--                <?php the_post_thumbnail('full', array("class" => "img-responsive")); ?>-->
+                        <!--            </a>-->
+                        <!--            <div class="offer">-->
+                        <!--                <a href="<?php the_permalink(); ?>">-->
+                        <!--                    <h3>-->
+                        <!--                        <?php the_title(); ?>-->
+                        <!--                    </h3>-->
+                        <!--                </a>-->
+                        <!--            </div>-->
+                        <!--        </div>-->
+                        <!--    </div>-->
+                        <!--<?php endwhile; ?>-->
                 </div>
             </div>
         </div>
     </div>
 </section>
 <?php $the_query = new WP_Query('page_id=2822'); ?>
-<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+<?php while ($the_query->have_posts()):
+    $the_query->the_post(); ?>
     <section id="parallax_cov">
         <div class="parallax_caption">
             <h2><?php the_title(); ?> </h2>
@@ -182,8 +193,8 @@ endif; ?>
             <div class="col-sm-4 featureTitle">
                 <h1><?php echo $title_p; ?></h1>
                 <div style="text-align: justify;">
-                <p><?php echo $content_p; ?></p>
-        </div>
+                    <p><?php echo $content_p; ?></p>
+                </div>
                 <a href="<?php the_permalink($id_p); ?>" class="btn_more">Read More</a>
             </div>
             <div class="col-sm-8">
@@ -191,18 +202,20 @@ endif; ?>
                     <div class="swiper-container mySwiper2">
                         <div class="swiper-wrapper">
                             <?php
-                           $args = array(
-                            'post_type' => 'trekking',
-                            'posts_per_page' => -1,
-                            'post_status' => 'publish', // Make sure you're only getting published posts
-                        );
+                            $args = array(
+                                'post_type' => 'trekking',
+                                'posts_per_page' => -1,
+                                'post_status' => 'publish', // Make sure you're only getting published posts
+                            );
                             $the_query = new WP_Query($args); ?>
-                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                            <?php while ($the_query->have_posts()):
+                                $the_query->the_post(); ?>
                                 <div class="swiper-slide mainTrip">
                                     <div class="fea_trip clearfix">
                                         <?php $summ = get_field('summitted_on'); ?>
-                                        <?php if ($summ) : ?>
-                                            <span class="region" data-toggle="tooltip" data-placement="bottom" title="Summitted on"><?php the_field('summitted_on'); ?></span>
+                                        <?php if ($summ): ?>
+                                            <span class="region" data-toggle="tooltip" data-placement="bottom"
+                                                title="Summitted on"><?php the_field('summitted_on'); ?></span>
                                         <?php endif; ?>
                                         <a href="<?php the_permalink(); ?>">
                                             <?php the_post_thumbnail('full', array("class" => "img-responsive")); ?>
@@ -211,10 +224,11 @@ endif; ?>
                                             <div class="feature_title">
                                                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                                 <?php $days = get_field('duration');
-                                                $elevation = get_field('elevation'); 
-                                                $cost=get_field('regular_cost');
+                                                $elevation = get_field('elevation');
+                                                $cost = get_field('regular_cost');
                                                 ?>
-                                                <?php if ($days) : ?> <h4><?php echo $days; ?> | <?php echo $cost; ?></h4><?php endif; ?>
+                                                <?php if ($days): ?>
+                                                    <h4><?php echo $days; ?> | <?php echo $cost; ?></h4><?php endif; ?>
                                             </div>
                                             <?php the_field('short_content'); ?>
                                             <div class="offer">
@@ -243,7 +257,8 @@ endif; ?>
 </section>
 <!-- 7000 M ko yesma add garnu -->
 <?php $the_query = new WP_Query('page_id=9466'); ?>
-<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+<?php while ($the_query->have_posts()):
+    $the_query->the_post(); ?>
     <section id="parallax_cov">
         <div class="parallax_caption">
             <h2><?php the_title(); ?> </h2>
@@ -267,8 +282,8 @@ endif; ?>
             <div class="col-sm-4 featureTitle">
                 <h1><?php echo $title; ?></h1>
                 <div style="text-align: justify;">
-                <p><?php echo $content; ?></p>
-                                                </div>
+                    <p><?php echo $content; ?></p>
+                </div>
 
                 <a href="<?php the_permalink($id); ?>" class="btn_more">Read More</a>
             </div>
@@ -277,18 +292,20 @@ endif; ?>
                     <div class="swiper-container mySwiper1">
                         <div class="swiper-wrapper">
                             <?php
-                            $args =  array(
-                                'post_type'   => array('peak'),
+                            $args = array(
+                                'post_type' => array('peak'),
                                 'posts_per_page' => 25,
-                                
+
                             );
                             $the_query = new WP_Query($args); ?>
-                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                            <?php while ($the_query->have_posts()):
+                                $the_query->the_post(); ?>
                                 <div class="swiper-slide mainTrip">
                                     <div class="fea_trip clearfix">
                                         <?php $summ = get_field('summitted_on'); ?>
-                                        <?php if ($summ) : ?>
-                                            <span class="region" data-toggle="tooltip" data-placement="bottom" title="Summitted on"><?php the_field('summitted_on'); ?></span>
+                                        <?php if ($summ): ?>
+                                            <span class="region" data-toggle="tooltip" data-placement="bottom"
+                                                title="Summitted on"><?php the_field('summitted_on'); ?></span>
                                         <?php endif; ?>
                                         <a href="<?php the_permalink(); ?>">
                                             <?php the_post_thumbnail('full', array("class" => "img-responsive")); ?>
@@ -297,10 +314,11 @@ endif; ?>
                                             <div class="feature_title">
                                                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                                 <?php $days = get_field('duration');
-                                                $elevation = get_field('elevation');   
-                                                $cost=get_field('regular_cost');
+                                                $elevation = get_field('elevation');
+                                                $cost = get_field('regular_cost');
                                                 ?>
-                                                <?php if ($days) : ?> <h4><?php echo $days; ?> | <?php echo $cost; ?></h4><?php endif; ?>
+                                                <?php if ($days): ?>
+                                                    <h4><?php echo $days; ?> | <?php echo $cost; ?></h4><?php endif; ?>
                                             </div>
                                             <?php the_field('short_content'); ?>
                                             <div class="offer">
@@ -329,7 +347,8 @@ endif; ?>
 </section>
 <!-- end -->
 <?php $the_query = new WP_Query('page_id=2022'); ?>
-<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+<?php while ($the_query->have_posts()):
+    $the_query->the_post(); ?>
     <section id="parallax_cov">
         <div class="parallax_caption">
             <h2><?php the_title(); ?> </h2>
@@ -353,8 +372,8 @@ endif; ?>
             <div class="col-sm-4 featureTitle">
                 <h1><?php echo $title_e; ?></h1>
                 <div style="text-align: justify;">
-                <p><?php echo $content_e; ?></p>
-                                                </div>
+                    <p><?php echo $content_e; ?></p>
+                </div>
                 <a href="<?php the_permalink($id_e); ?>" class="btn_more">Read More</a>
             </div>
             <div class="col-sm-8">
@@ -362,18 +381,20 @@ endif; ?>
                     <div class="swiper-container mySwiper3">
                         <div class="swiper-wrapper">
                             <?php
-                            $args =  array(
-                                'post_type'   => array('expedition'),
+                            $args = array(
+                                'post_type' => array('expedition'),
                                 'posts_per_page' => 25,
-                                
+
                             );
                             $the_query = new WP_Query($args); ?>
-                            <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+                            <?php while ($the_query->have_posts()):
+                                $the_query->the_post(); ?>
                                 <div class="swiper-slide mainTrip">
                                     <div class="fea_trip clearfix">
                                         <?php $summ = get_field('summitted_on'); ?>
-                                        <?php if ($summ) : ?>
-                                            <span class="region" data-toggle="tooltip" data-placement="bottom" title="Summitted on"><?php the_field('summitted_on'); ?></span>
+                                        <?php if ($summ): ?>
+                                            <span class="region" data-toggle="tooltip" data-placement="bottom"
+                                                title="Summitted on"><?php the_field('summitted_on'); ?></span>
                                         <?php endif; ?>
                                         <a href="<?php the_permalink(); ?>">
                                             <?php the_post_thumbnail('full', array("class" => "img-responsive")); ?>
@@ -382,10 +403,11 @@ endif; ?>
                                             <div class="feature_title">
                                                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                                 <?php $days = get_field('duration');
-                                                $elevation = get_field('elevation');   
-                                                $cost=get_field('regular_cost');
+                                                $elevation = get_field('elevation');
+                                                $cost = get_field('regular_cost');
                                                 ?>
-                                                <?php if ($days) : ?> <h4><?php echo $days; ?> | <?php echo $cost; ?></h4><?php endif; ?>
+                                                <?php if ($days): ?>
+                                                    <h4><?php echo $days; ?> | <?php echo $cost; ?></h4><?php endif; ?>
                                             </div>
                                             <?php the_field('short_content'); ?>
                                             <div class="offer">
@@ -413,7 +435,8 @@ endif; ?>
     </div>
 </section>
 <?php $the_query = new WP_Query('page_id=2817'); ?>
-<?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+<?php while ($the_query->have_posts()):
+    $the_query->the_post(); ?>
     <section id="parallax_cov">
         <div class="parallax_caption">
             <h2><?php the_title(); ?> </h2>
