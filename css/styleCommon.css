@@ -264,6 +264,24 @@ li {
 }
 
 /* featuredWrap */
+.staff {
+    margin-bottom: 30px;
+}
+
+.staff-details {
+    background: #eee;
+    padding: 16px;
+}
+
+.staff-name {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.staff-designation {
+    font-size: 16px;
+    margin: 0;
+}
 
 .staff img {
     position: relative;
@@ -1407,4 +1425,17 @@ nav.top-nav.scrolled {
 /* contact end */
 .contact-us-title {
     margin-bottom: 16px;
+}
+
+.member-image {
+    flex-shrink: 0;
+}
+
+.member-details {
+    flex-grow: 1;
+}
+
+.member-wrapper {
+    display: flex;
+    gap: 32px;
 }
