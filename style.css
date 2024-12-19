@@ -1,0 +1,119 @@
+/*
+Theme Name: Sherpa Technolgoies
+Theme URI: https://sherpa-tech.com/
+Author: sherpa-tech team
+Author URI: https://sherpa-tech.com/
+Version: 1.0
+*/
+/*#navWrap.affix .brand{*/
+/*    display:none;*/
+/*}*/
+input, textarea{
+    width: 98%;
+}
+.iphorm-group-alignment-proportional > .iphorm-group-elements > .iphorm-group-row-2cols > .iphorm-element-wrap, .iphorm-group-alignment-proportional > .iphorm-group-elements > .iphorm-group-row-2cols > .iphorm-group-wrap {
+    width: 50% !important;
+}
+.iphorm-group-alignment-proportional > .iphorm-group-elements > .iphorm-group-row > .iphorm-element-wrap .iphorm-element-spacer{
+    padding: 0 5px 0 0;
+}
+
+
+@media(min-width: 768px){
+    #mc_embed_signup .mc-field-group {
+    clear: none !important;
+    position: relative !important;
+    width: 33.3% !important;
+    padding-bottom: 18px !important;
+}
+}
+#mc_embed_signup .button {
+   
+    background-color: #dd2020 !important;
+    text-transform: uppercase !important;
+    font-weight: bold !important;
+    width: 100% !important;
+        font-size: 20px !important;
+    height: 54px  !important;
+}
+#mc_embed_signup .mc-field-group input {
+    height: 50px !important;
+}
+#mc_embed_signup .mc-field-group label {
+    height: 26px !important;
+}
+#mc_embed_signup{
+    background: transparent !important;
+}
+#mc_embed_signup form{
+    padding: 0 !important;
+}
+}
+
+
+@media only screen and (max-device-width: 480px){
+  .nameandtitle{
+    position: absolute;
+    top: 10%;
+    left:8%;
+    color: white;
+    font-weight: bold;
+  }
+
+  .hero-img{
+    height: 50vh;
+    object-fit: cover;
+    object-fit: cover;
+    filter: brightness(0.8);
+  }
+  
+}
+.pan{
+	padding: 10px;
+	border: 1px solid white;
+	text-align:center;
+	color: white;
+	
+}
+
+@media only screen and (max-device-width: 768px){
+  .nameandtitle {
+    position: absolute;
+    top: 24%;
+    left: 6%;
+    color: white;
+    font-weight: bold;
+}
+
+.hero-img{
+  height: 80vh;
+  object-fit: cover;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+}
+
+
+@media screen and (max-width: 790px){
+  html {
+    font-size: 14px;
+  }
+
+}
+.star-rating {
+  display: flex;
+}
+
+.star-rating svg {
+  width: 18px;
+  height: 18px;
+  color: #ff9900;
+}
+
+.star-rating svg:not(:last-child) {
+  margin-right: 3px;
+}
+.wpsr-ig-header .wpsr-ig-header-inner .wpsr-ig-header-info .wpsr-ig-header-name a {
+text-align: center!important;
+font-size: 18px!important;
+}

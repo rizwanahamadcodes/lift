@@ -1,0 +1,242 @@
+#navWrap.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 111;
+    transition: all 0.66s;
+    animation: smoothScroll 1s forwards;
+    z-index: 99;
+    background: black;
+    padding: 2px 55px;
+}
+
+#navWrap.affix .brand h1 {
+    transition: all 1s;
+    font-size: 29px;
+}
+
+#navWrap.affix .brand {
+    transition: all 1s;
+    top: 10px;
+    left: 50%;
+}
+#navWrap.affix .brand img{
+    height: 90px;
+}
+#navWrap.affix .navbar-btn{
+        top: 18px;
+}
+.navbar-default .navbar-nav>li>a {
+    color: #fff;
+}
+
+.brand {
+    position: absolute;
+    top: 15px;
+    left: 46%;
+    margin-left: -50px !important;
+    display: block;
+    color: #fff;
+    text-align: center;
+}
+
+.brand h1 {
+    margin: 0;
+        font-weight: bold;
+    /*font-family: 'Lobster', cursive;*/
+}
+.brand p{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 12px;
+}
+.brand img{
+    height: 165px;
+}
+.brand:hover {
+    color: #fff;
+}
+
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover {
+    color: #f28d01;
+}
+.gflg a{
+    float: left;
+    padding: 15px 5px !important;
+}
+
+@media (min-width: 768px) {
+    .carousel-caption h3 {
+    font-size: 40px !important;
+    text-shadow: -1px 1px 1px #444;
+}
+.s_show{
+    display: none !important;
+}
+}
+@media (max-width: 767px) {
+    .navbar {
+        padding: 0;
+    }
+    .navbar-btn span {
+        display: none;
+    }
+    .brand h1 {
+        font-size: 21px;
+    }
+    #navWrap.affix .brand h1 {
+        transition: all 1s;
+        font-size: 20px;
+    }
+    .brand {
+        left: 52%;
+    top: 20px;
+    }
+    .heading h3 {
+        line-height: 28px;
+    }
+    #sidebar {
+        width: 100%;
+        left: -450px;
+    }
+    .sidebar-header h1 {
+        padding-left: 160px !important;
+    }
+    #dismiss {
+        left: 30%;
+    }
+    .brand img{
+        height: 70px;
+}
+#bs-example-navbar-collapse-1{
+    display: block !important;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: transparent !important;
+}
+.s_show{
+    display: block !important;
+}
+.s_show img {
+    height: 48px !important;
+}
+.navbar-right{
+    float: right!important;
+    display: flex !important;
+    margin-top: 18px !important;
+    margin-right: 8px !important;
+}
+.s_hide {
+    display: none !important;
+}
+}
+
+.sidebar-header h1 {
+    font-size: 23px;
+    color: #fff;
+    padding-left: 120px;
+padding-top: 50px;
+}
+
+
+/*hamburger-changer-on-click*/
+
+.m_icon {
+    padding: 13px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+
+/* Icon 1 */
+
+.animated-icon2 {
+    width: 23px;
+    height: 23px;
+    position: relative;
+    margin: 0px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.animated-icon2 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+.animated-icon2 span {
+    background: #fff;
+}
+
+
+/* Icon 3*/
+
+.animated-icon2 span:nth-child(1) {
+    top: 0px;
+}
+
+.animated-icon2 span:nth-child(2),
+.animated-icon2 span:nth-child(3) {
+    top: 10px;
+}
+
+.animated-icon2 span:nth-child(4) {
+    top: 20px;
+}
+
+.animated-icon2.open span:nth-child(1) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+}
+
+.animated-icon2.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.animated-icon2.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.animated-icon2.open span:nth-child(4) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+}
+.s_show img{
+    height: 72px;
+}
+#navWrap.affix .s_show{
+    display: block !important;
+}
+
+#navWrap.affix .s_hide{
+    display: none !important;
+}

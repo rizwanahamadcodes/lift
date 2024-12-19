@@ -1,0 +1,647 @@
+@media only screen and (min-device-width: 411px) and (max-device-width: 731px) {
+  #dismiss {
+    left: 28% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 15px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  ul,
+  ol {
+    font-size: 14px;
+  }
+
+  .collectionTOp {
+    padding: 0 35px;
+  }
+
+  .mainTrip {
+    margin-bottom: 15px;
+  }
+
+  .heading h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .offer_cov {
+    margin-bottom: 15px;
+  }
+
+  .parallax_caption {
+    width: auto;
+    padding: 10px 15px;
+  }
+
+  #tripfooterWrap ul {
+    margin-bottom: 0 !important;
+  }
+
+  .foot_main ul {
+    margin-bottom: 0 !important;
+  }
+
+  .socialIcons {
+    width: 100%;
+  }
+
+  #h_about img {
+    display: block;
+    height: 175px;
+    margin: 0 auto;
+  }
+
+  .prakash {
+    display: none;
+  }
+
+  #overlay img {
+    height: 220px;
+  }
+
+  .entry {
+    border-right: 0 solid #d0d0d0;
+  }
+
+  #contactWrap .contact {
+    margin: 15px 0 !important;
+  }
+
+  .entry .no-mar-padleft {
+    padding: 0;
+  }
+
+  .entry .no-mar-padright {
+    padding: 0;
+  }
+
+  #chooseWrap .btn-default {
+    font-size: 11px !important;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 8px 12px;
+  }
+
+  .carousel-indicators {
+    bottom: 20px;
+  }
+
+  #chooseWrap.affix {
+    left: 0%;
+  }
+
+  #chooseWrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0px;
+    width: 100%;
+  }
+
+  #chooseWrap1 .btn-default {
+    font-size: 11px !important;
+    padding: 13px 1px !important;
+  }
+
+  .carousel-indicators {
+    bottom: 20px;
+  }
+
+  #chooseWrap1.affix {
+    left: 4%;
+  }
+
+  #chooseWrap1 {
+    right: 4%;
+  }
+
+  .heading h1 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .associated img {
+    height: 40px;
+  }
+
+  .entry {
+    padding: 25px;
+  }
+
+  .left-discp {
+    padding: 25px 20px;
+  }
+
+  .reserved p {
+    padding-bottom: 51px;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .row.tripfooter {
+    padding: 20px 0 55px 0;
+  }
+
+  .social {
+    padding-bottom: 5px;
+  }
+
+  #detailWrap .topOverview p {
+    font-size: 17px;
+  }
+
+  #detailWrap h1 {
+    font-size: 22px;
+  }
+
+  #detailWrap .btn_book {
+    padding: 11px 20px;
+    font-size: 15px;
+  }
+
+  #detailWrap .iconInner {
+    height: 100px;
+    width: 100px;
+    font-size: 34px;
+  }
+
+  #detailWrap .tripInfo {
+    padding: 30px 15px;
+  }
+
+  #detailWrap .title {
+    font-size: 16.5px;
+    padding-left: 15px;
+    margin-bottom: 25px;
+  }
+
+  .modal-content form {
+    padding: 10px;
+  }
+
+  .modal-content form .form-control {
+    height: 37px;
+  }
+
+  .modal-content form label {
+    font-size: 14px;
+  }
+
+  .modal-header {
+    padding: 15px 25px;
+  }
+
+  .modal-header h4 {
+    font-size: 20px;
+  }
+
+  button.close {
+    font-size: 27px;
+  }
+
+  .additionalInfo .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  #detailWrap .tripInfo:nth-child(1) {
+    border-bottom: 1px solid #ddd;
+  }
+
+  #detailWrap .tripInfo:nth-child(2) {
+    border-bottom: 1px solid #ddd;
+    border-right: 0px solid #ddd;
+  }
+
+  .tripDetails {
+    padding: 0 15px;
+  }
+
+  #faqWrap .accordion .card-body {
+    padding: 20px 20px;
+  }
+
+  #faqWrap .accordion .card-body p,
+  #faqWrap .accordion .card-body .innerContent ul li {
+    font-size: 13.5px;
+  }
+
+  .bookDates h3 {
+    font-size: 15px;
+    margin-bottom: 13px;
+  }
+
+  .itinerary ul li strong {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .nav-pills > li > a {
+    padding: 5px 0;
+    font-size: 13px;
+    margin-right: 10px;
+  }
+
+  .tripNote img {
+    width: 140px;
+    height: 195px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+  }
+
+  .tripTeam img {
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+  }
+
+  #overlay {
+    height: 50vh;
+  }
+
+  #overlay .overlayInner h1 {
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  #overlay .overlayInner h1 span::after {
+    display: none;
+  }
+
+  .navbar-btn {
+    top: 15px !important;
+    left: 20px !important;
+  }
+
+  .include ul,
+  .exclude ul {
+    column-count: 1;
+  }
+
+  .include li:before,
+  .exclude li:before {
+    margin-top: 2px;
+  }
+
+  .sliderBorder {
+    width: 94.5% !important;
+    height: 89.5% !important;
+  }
+
+  .swiper-pagination-bullet {
+    width: 11px !important;
+    height: 10px !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    height: 13px !important;
+    width: 13px !important;
+  }
+
+  .swiper-container-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    bottom: 15px !important;
+  }
+
+  .mainLineRow {
+    display: inherit;
+  }
+
+  .mainLine:not(:last-child) {
+    border-right: 0px solid #ddd !important;
+    border-bottom: 2px solid #ddd !important;
+    padding-bottom: 30px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .foot_logo img {
+    height: 160px !important;
+  }
+
+  .subBox {
+    margin-top: 45px !important;
+  }
+
+  #mc_embed_signup .mc-field-group {
+    width: 100% !important;
+  }
+
+  #navWrap.affix .brand {
+    top: 5px !important;
+  }
+
+  #navWrap.affix {
+    padding: 4px 1px !important;
+  }
+
+  #navWrap.affix .navbar-btn {
+    top: 15px !important;
+  }
+
+  #navWrap.affix .brand img {
+    height: 80px !important;
+  }
+
+  .detailFeature h2 {
+    font-size: 20px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .detailFeature h2::before {
+    width: 55px;
+  }
+
+  .detailFeature .swiper-button-prev,
+  .detailFeature .swiper-container-rtl .swiper-button-next {
+    left: -1px !important;
+  }
+
+  .detailFeature .swiper-button-next,
+  .detailFeature .swiper-container-rtl .swiper-button-prev {
+    right: -1px !important;
+  }
+
+  .detailFeature .swiper-container {
+    height: auto !important;
+  }
+
+  .detailFeature .fea_trip img {
+    height: 190px !important;
+  }
+
+  .detailFeature .mainTrip {
+    margin-bottom: 0 !important;
+  }
+
+  .detailFeature {
+    background: #eae5e5;
+    padding: 30px 0 !important;
+    padding-bottom: 10px !important;
+  }
+
+  .detailFeature .swiper-button-next:after,
+  .detailFeature .swiper-button-prev:after {
+    font-size: 12px !important;
+  }
+
+  .news {
+    margin-bottom: 20px;
+  }
+
+  #latestNews h1 {
+    font-size: 21px;
+    margin-bottom: 30px;
+  }
+
+  #latestNews {
+    padding: 20px 0;
+  }
+
+  .btn_more {
+    margin-bottom: 30px;
+  }
+
+  .featureTitle h1 {
+    margin-bottom: 15px;
+  }
+
+  #parallax_Wrap {
+    height: 250px;
+  }
+
+  .whyInfo img {
+    height: 80px;
+  }
+
+  .left-discp {
+    border-left: 0px solid #ddd;
+  }
+
+  #latestDetail h1 {
+    font-size: 22px;
+  }
+
+  #latestDetail .topHeading h4 {
+    font-size: 13px;
+  }
+
+  .newGallery h3 {
+    font-size: 21px;
+    padding-left: 6px;
+  }
+
+  #latestDetail {
+    padding: 20px 0;
+  }
+
+  .newGallery img {
+    height: 140px;
+  }
+
+  #latestDetail .innerContent img {
+    margin-bottom: 11px;
+  }
+
+  #latestDetail .innerContent {
+    border: 0px solid #ddd;
+    padding: 0;
+  }
+
+  .similarMain h1 {
+    font-size: 19px !important;
+    margin-bottom: -7px !important;
+  }
+
+  .tripRev {
+    display: inherit;
+  }
+
+  .featureTitle h1 {
+    font-size: 25px;
+  }
+
+  #parallax_Wrap {
+    background-attachment: inherit;
+  }
+
+  #slider_Wrap,
+  #carousel {
+    background-attachment: inherit !important;
+  }
+
+  .detailFeature .swiper-container {
+    padding: 0 20px;
+  }
+
+  #galleryModal .close {
+    font-size: 22px;
+    right: 10px !important;
+    top: 10px !important;
+  }
+
+  #latestNews h1,
+  #featuredWrap.latesNews h1 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .quick {
+    padding-left: 55px;
+  }
+
+  #contactWrap .contact {
+    display: flex;
+  }
+
+  .equalht {
+    flex: 1 1 auto;
+  }
+
+  .similarMain .fea_trip img {
+    height: 153px;
+  }
+
+  .similarMain .feature_title:after {
+    display: none;
+  }
+
+  .similarMain .feature_info {
+    height: auto !important;
+    padding-bottom: 3px;
+  }
+
+  .similarMain .feature_info .offer {
+    margin-top: 15px;
+  }
+
+  .similarMain .fea_trip h3 {
+    font-size: 16px;
+  }
+
+  .similarMain h5 {
+    font-size: 12px;
+  }
+
+  .similarMain .feature_info .offer h3 {
+    font-size: 11px;
+    width: 111px;
+  }
+}
+
+@media (min-width: 1023px) {
+  .offer-flex {
+    display: flex;
+  }
+
+  .offer-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+  .mainTrip {
+    padding: 7px;
+  }
+
+  .fea_trip img {
+    height: 185px;
+  }
+
+  .heading h1 {
+    font-size: 35px;
+  }
+
+  #overlay .overlayInner h1 {
+    font-weight: 800;
+    color: #fff;
+    font-size: 32px;
+  }
+
+  #overlay {
+    height: 80vh;
+  }
+
+  .swiper-button-next,
+  .swiper-container-rtl .swiper-button-prev {
+    right: 38% !important;
+  }
+
+  .swiper-button-prev,
+  .swiper-container-rtl .swiper-button-next {
+    left: 38% !important;
+  }
+
+  .brand img {
+    height: 88px !important;
+  }
+
+  .news {
+    margin-bottom: 30px;
+  }
+
+  .newGallery img {
+    height: 120px;
+  }
+
+  .similarMain .fea_trip img {
+    height: 108px;
+  }
+
+  #latestDetail h1 {
+    font-size: 27px;
+  }
+
+  @media only screen and (min-device-width: 1024px) and (max-device-width: 1365px) {
+  }
+}
+
+@media (max-width: 767px) {
+  .faq-head {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+#detailWrap .tripInfo:not(:last-child) {
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+@media (max-width: 480px)
+.client_name {
+ width: 256px;
+
+}
+
+
