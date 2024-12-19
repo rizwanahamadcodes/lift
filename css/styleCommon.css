@@ -916,7 +916,7 @@ h2.footer-brand-name {
 }
 
 .footer-brand-description {
-    font-size: 1rem;
+    font-size: 16px;
     color: hsl(0deg, 0%, 70%);
 }
 
@@ -1028,7 +1028,7 @@ img.brand-logo {
 
 ul.footer-contact-list {
     display: flex;
-    gap: 0.75rem;
+    gap: 12px;
 }
 
 ul.footer-contact-list li {
@@ -1038,7 +1038,7 @@ ul.footer-contact-list li {
 }
 
 ul.footer-contact-list li i {
-    width: 1.25rem;
+    width: 20px;
 }
 
 ul.footer-contact-list li p {
@@ -1405,3 +1405,6 @@ nav.top-nav.scrolled {
     width: 100% !important;
 }
 /* contact end */
+.contact-us-title {
+    margin-bottom: 16px;
+}

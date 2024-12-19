@@ -234,7 +234,11 @@
                 $emails2 = get_sub_field('emails_1');  // Emails
                 ?>
 
+                <h5 class="footer-column-title contact-us-title">
+                  Contact Us
+                </h5>
                 <ul class="footer-contact-list">
+
                   <?php if ($address): ?>
                     <li>
                       <i class="fa fa-map-marker"></i> <?php echo $address; ?>
